@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;1,400&display=swap');
+
+// Naming convention:
+// alfa
+// bravo
+// charlie
+// delta
+// echo
+// foxtrot
+// golf
+// hotel
+// india
+// juliett
+// kilo
+// lima
+// mike						Median
+// november
+// oscar
+// papa
+// quebec
+// romeo
+// sierra
+// tango
+// uniform
+// victor
+// whiskey
+// xray
+// yankee
+// zulu
+
+:root {
+  // FONT
+  --font-family: 'Be Vietnam Pro', sans-serif;
+
+  --font-size-charlie: 4.209rem;
+  --font-size-echo: 3.157rem;
+  --font-size-golf: 2.369rem;
+  --font-size-india: 1.777rem;
+  --font-size-kilo: 1.333rem;
+  --font-size-mike: 1.6rem;
+  --font-size-oscar: 0.75rem;
+
+  --font-weight-mike: 400;
+  --font-weight-oscar: 500;
+
+  // COLOR
+  --color-mono-alfa: hsl(0, 0%, 100%);
+  --color-mono-delta: hsl(0, 0%, 88%);
+  --color-mono-golf: hsl(0, 0%, 75%);
+  --color-mono-juliett: hsl(0, 0%, 63%);
+  --color-mono-mike: hsl(0, 0%, 50%);
+  --color-mono-papa: hsl(0, 0%, 38%);
+  --color-mono-sierra: hsl(0, 0%, 31%);
+  --color-mono-victor: hsl(0, 0%, 25%);
+  --color-mono-yankee: hsl(0, 0%, 13%);
+  --color-mono-zulu: hsl(0, 0%, 0%);
+
+  --color-orange-mike: hsl(30, 100%, 50%); //ff8000
+
+  // GENERIC SIZES
+  --size-echo: 64px;
+  --size-golf: 32px;
+  --size-india: 24px;
+  --size-kilo: 16px;
+  --size-mike: 8px;
+  --size-oscar: 4px;
+  --size-quebec: 2px;
+}
