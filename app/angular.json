@@ -34,7 +34,7 @@
               }
             ],
             "styles": ["./node_modules/@abytegray/embla/dist/core/core.css"],
-            "scripts": []
+            "scripts": ["./node_modules/@abytegray/embla/dist/core/elements.js"]
           },
           "configurations": {
             "production": {
