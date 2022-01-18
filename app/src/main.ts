@@ -4,6 +4,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
+import { defineCustomElements } from '@abytegray/embla/dist/web-components/loader';
+
 if (environment.production) {
   enableProdMode();
 }
@@ -11,3 +13,4 @@ if (environment.production) {
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
   .catch((err) => console.error(err));
+defineCustomElements(window);
