@@ -13,8 +13,8 @@
   ],
   "scripts": {
     "dev": "webpack --env development --watch",
-    "dev-stencil": "stencil build --dev --watch",
-    "build": "webpack --config webpack.prod.js --watch",
+    "dev-stencil": "stencil build --watch",
+    "build": "webpack --config webpack.prod.js",
     "build-stencil": "stencil build",
     "deploy": "node ./gh-pages.js",
     "linked": "npm ls -g --depth=0 --link=true"
