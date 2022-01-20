@@ -1,1 +1,20 @@
-<p>navigation works!</p>
+<nav>
+  <ul>
+    <li>
+      Elements
+      <ul>
+        <li *ngFor="let item of elements; index as i">
+          {{ item.title }}
+        </li>
+      </ul>
+    </li>
+    <li>
+      Components
+      <ul>
+        <li *ngFor="let item of components; index as i">
+          {{ item.title }}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
