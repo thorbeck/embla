@@ -15,7 +15,7 @@
     "dev": "webpack --env development --watch",
     "dev-stencil": "stencil build --watch",
     "build": "webpack --config webpack.prod.js",
-    "build-stencil": "stencil build",
+    "build-stencil": "stencil build --docs-json ./dist/web-components/docs.json",
     "deploy": "node ./gh-pages.js",
     "linked": "npm ls -g --depth=0 --link=true"
   },
