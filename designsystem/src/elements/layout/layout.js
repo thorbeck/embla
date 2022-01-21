@@ -1,4 +1,4 @@
-import styles from './layout.module';
+import styles from './layout.module.scss';
 import EmblaEvents from '../../events';
 
 class EmblaLayout extends HTMLElement {

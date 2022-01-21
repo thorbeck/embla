@@ -10,7 +10,10 @@
 }
 
 .header {
+  display: flex;
   grid-area: header;
+  padding: var(--size-mike);
+  align-items: center;
 }
 
 .aside {
