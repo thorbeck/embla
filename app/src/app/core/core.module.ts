@@ -1,12 +1,12 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EnsureImportedOnceModule } from './import-guard';
-import { NavigationComponent } from './navigation/navigation.component';
+import { NavigationModule } from './navigation/navigation.module';
 
 @NgModule({
-  declarations: [NavigationComponent],
-  imports: [CommonModule],
-  exports: [NavigationComponent],
+  declarations: [],
+  imports: [CommonModule, NavigationModule],
+  exports: [NavigationModule],
 })
 export class CoreModule extends EnsureImportedOnceModule {
   public constructor(@SkipSelf() @Optional() parent: CoreModule) {

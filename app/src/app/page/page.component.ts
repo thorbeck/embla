@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { DataService } from '../data.service';
+import { DataService } from '../shared/data.service';
 
 import { IPage } from './page.interface';
 
 @Component({
   selector: 'app-page',
   templateUrl: './page.component.html',
-  styleUrls: ['./page.component.scss'],
 })
 export class PageComponent {
   item: IPage | null = null;

@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PageComponent } from './page/page.component';
 import { DataService } from './data.service';
 
 @NgModule({
-  declarations: [PageComponent],
+  declarations: [],
   imports: [CommonModule],
-  exports: [PageComponent],
+  exports: [DataService],
   providers: [DataService],
 })
 export class SharedModule {}
