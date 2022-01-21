@@ -1,9 +1,9 @@
-import style from './nav-toggle.shadow';
+import style from './nav-toggle.shadow.scss';
 import EmblaEvents from '../../events';
 
 const template = document.createElement('template');
 template.id = 'embla-nav-toggle';
-template.innerHTML = `<style>${style}</style><button type="button">toggle</button>`;
+template.innerHTML = `<style>${style}</style><button type="button" aria-haspopup="true"><span></span><span></span><span></span></button>`;
 document.body.appendChild(template);
 
 class NavToggle extends HTMLElement {
@@ -20,12 +20,15 @@ class NavToggle extends HTMLElement {
   }
 
   connectedCallback() {
-    const catFound = new Event(EmblaEvents.navToggle, {
+    const toggleEvent = new Event(EmblaEvents.navToggle, {
       bubbles: true,
     });
     const button = this.shadowRoot.querySelector('button');
     button.addEventListener('click', () => {
-      this.dispatchEvent(catFound);
+      button.hasAttribute('aria-expanded')
+        ? button.removeAttribute('aria-expanded')
+        : button.setAttribute('aria-expanded', 'true');
+      this.dispatchEvent(toggleEvent);
     });
   }
 }

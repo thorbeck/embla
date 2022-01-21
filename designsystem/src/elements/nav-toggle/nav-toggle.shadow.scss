@@ -2,10 +2,106 @@
   display: inline-block;
 
   button {
-    background: none;
+    display: flex;
+    width: var(--size-golf);
+    height: var(--size-golf);
+    margin: 0;
+    padding: var(--size-oscar) var(--size-quebec);
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 240ms ease;
+
+    span {
+      width: 100%;
+      height: var(--size-oscar);
+      border-radius: var(--size-quebec);
+      background: var(--color-orange-mike);
+      transition: width 240ms ease;
+
+      &:nth-child(1) {
+        transform: translateX(0);
+      }
+
+      &:nth-child(2) {
+        transform: translate(0, 0);
+      }
+
+      &:nth-child(3) {
+        transform: translateX(0);
+      }
+    }
+
+    &[aria-expanded='true'] {
+      background-color: var(--color-mono-yankee);
+      span:nth-child(1) {
+        width: 8px;
+        animation: bar-top 800ms ease-in-out infinite alternate 300ms;
+      }
+
+      span:nth-child(2) {
+        align-self: center;
+        width: 4px;
+        animation: pong-ball 1600ms linear infinite 300ms;
+      }
+
+      span:nth-child(3) {
+        align-self: flex-end;
+        width: 8px;
+        animation: bar-bottom 400ms ease-in-out infinite alternate 300ms;
+      }
+    }
   }
 
   @media (min-width: 768px) {
     display: none;
+  }
+
+  @keyframes bar-top {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(20px);
+    }
+  }
+
+  @keyframes pong-ball {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    14% {
+      transform: translate(-8px, -8px);
+    }
+
+    40% {
+      transform: translate(8px, 8px);
+    }
+
+    64% {
+      transform: translate(8px, -8px);
+    }
+
+    88% {
+      transform: translate(8px, 8px);
+    }
+
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes bar-bottom {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-16px);
+    }
   }
 }
