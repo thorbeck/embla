@@ -10,6 +10,7 @@
     "deploy": "node ./gh-pages.js"
   },
   "private": true,
+  "type": "module",
   "dependencies": {
     "@angular/animations": "~13.1.0",
     "@angular/common": "~13.1.0",

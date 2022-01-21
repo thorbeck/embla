@@ -1,7 +1,7 @@
 import { publish } from "gh-pages";
 
 publish(
-  "dist", // path to public directory
+  "./app/dist", // path to public directory
   {
     branch: "gh-pages",
     repo: "https://github.com/thorbeck/embla.git", // Update to point to your repository
