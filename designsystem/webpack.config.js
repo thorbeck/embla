@@ -24,8 +24,6 @@ module.exports = (env) => {
             {
               loader: 'css-loader',
               options: {
-                importLoaders: 2,
-                sourceMap: false,
                 modules: true,
               },
             },
@@ -39,9 +37,6 @@ module.exports = (env) => {
             {
               loader: 'css-loader',
               options: {
-                importLoaders: 2,
-                sourceMap: false,
-                modules: false,
                 exportType: 'string',
               },
             },
@@ -53,14 +48,7 @@ module.exports = (env) => {
           test: /\.(scss)$/,
           use: [
             MiniCssExtractPlugin.loader,
-            {
-              loader: 'css-loader',
-              options: {
-                importLoaders: 2,
-                sourceMap: false,
-                modules: false,
-              },
-            },
+            'css-loader',
             'postcss-loader',
             'sass-loader',
           ],
@@ -79,11 +67,7 @@ module.exports = (env) => {
         },
       ],
     },
-    plugins: [
-      new MiniCssExtractPlugin({
-        filename: '[name].css',
-      }),
-    ],
+    plugins: [new MiniCssExtractPlugin()],
     resolve: {
       extensions: ['.js'],
     },
