@@ -2,51 +2,49 @@
   display: grid;
   min-height: 100vh;
   gap: var(--size-mike);
+
+  > header {
+    display: flex;
+    grid-area: header;
+    padding: var(--size-mike);
+    align-items: center;
+  }
+
+  > main {
+    grid-area: main;
+  }
 }
 
 .header-aside-main {
   grid-template-areas: 'header' 'main';
   grid-template-rows: var(--size-echo) 1fr;
-}
 
-.header {
-  display: flex;
-  grid-area: header;
-  padding: var(--size-mike);
-  align-items: center;
-}
+  > aside {
+    position: fixed;
+    width: var(--size-alfa);
+    top: var(--size-echo);
+    bottom: 0;
+    left: calc(-1 * var(--size-alfa));
+    overflow-y: auto;
+    z-index: 10;
+    background: #ccc;
+    transition: transform 0.25s ease;
 
-.aside {
-  position: fixed;
-  width: var(--size-alfa);
-  top: var(--size-echo);
-  bottom: 0;
-  left: calc(-1 * var(--size-alfa));
-  overflow-y: auto;
-  z-index: 10;
-  background: #ccc;
-  transition: transform 0.25s ease;
-}
-
-.open {
-  transform: translateX(var(--size-alfa));
-}
-
-.main {
-  grid-area: main;
-}
-
-@media (min-width: 768px) {
-  .aside {
-    position: unset;
-    width: unset;
-    top: unset;
-    bottom: unset;
-    left: unset;
+    &.open {
+      transform: translateX(var(--size-alfa));
+    }
   }
 
-  .header-aside-main {
+  @media (min-width: 768px) {
     grid-template-areas: 'header header' 'aside main';
     grid-template-columns: var(--size-alfa) 1fr;
+
+    > aside {
+      position: unset;
+      width: unset;
+      top: unset;
+      bottom: unset;
+      left: unset;
+    }
   }
 }

@@ -15,28 +15,6 @@ class EmblaLayout extends HTMLElement {
       let aside = this.querySelector('aside');
       aside.classList.toggle(styles.open);
     });
-
-    // Use observer to properly detect children changes
-    var observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
-        if (mutation.addedNodes.length) {
-          let child = mutation.addedNodes[0];
-          switch (child.tagName) {
-            case 'HEADER':
-              child.classList.add(styles.header);
-              break;
-            case 'ASIDE':
-              child.classList.add(styles.aside);
-              break;
-            case 'MAIN':
-              child.classList.add(styles.main);
-              break;
-          }
-        }
-      });
-    });
-
-    observer.observe(this, { childList: true });
   }
 }
 
