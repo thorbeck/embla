@@ -6,11 +6,9 @@
       }}</a>
       <ul>
         <li *ngFor="let child of item.children; index as i">
-          <a
-            routerLink="{{ item.slug }}/{{ child.slug }}"
-            routerLinkActive="active"
-            >{{ child.title }}</a
-          >
+          <a [routerLink]="[item.slug, child.slug]" routerLinkActive="active">{{
+            child.title
+          }}</a>
         </li>
       </ul>
     </li>
