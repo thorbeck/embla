@@ -16,6 +16,7 @@
     "dev-stencil": "stencil build --watch",
     "build": "webpack --env production && sassdoc src",
     "build-stencil": "stencil build --docs-json ./dist/web-components/docs.json",
+    "generate": "stencil generate",
     "deploy": "node ./gh-pages.js",
     "linked": "npm ls -g --depth=0 --link=true"
   },
