@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "webpack --env development --watch",
     "dev-stencil": "stencil build --watch",
-    "build": "webpack --env production && sassdoc src",
+    "build": "webpack --env production",
     "build-stencil": "stencil build --docs-json ./dist/web-components/docs.json",
     "generate": "stencil generate",
     "deploy": "node ./gh-pages.js",

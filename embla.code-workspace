@@ -1,8 +1,14 @@
 {
   "folders": [
     {
-      "path": "."
+      "path": "app"
+    },
+    {
+      "path": "designsystem"
     }
   ],
-  "settings": {}
+  "settings": {},
+  "extensions": {
+    "recommendations": ["ethansk.restore-terminals"]
+  }
 }
