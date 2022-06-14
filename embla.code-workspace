@@ -7,7 +7,9 @@
       "path": "designsystem"
     }
   ],
-  "settings": {},
+  "settings": {
+    "conventionalCommits.scopes": ["Core"]
+  },
   "extensions": {
     "recommendations": ["ethansk.restore-terminals"]
   }
