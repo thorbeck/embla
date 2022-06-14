@@ -8,6 +8,8 @@ import {
   Firestore,
   doc,
   getDoc,
+  query,
+  where,
 } from 'firebase/firestore/lite';
 import { environment } from '../../environments/environment';
 
@@ -40,5 +42,13 @@ export class DataService {
     } else {
       return null;
     }
+  }
+
+  async getElements() {
+    const q = query(collection(this.db, 'elements'), where('type', '==', 1));
+    const snapshot = await getDocs(q);
+    const list = snapshot.docs.map((doc) => doc.data());
+
+    return list;
   }
 }
