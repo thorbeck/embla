@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from 'src/app/shared/data.service';
 import { CustomRoutes } from '../routes';
 import { INavigationItem } from './navigation.interface';
@@ -15,25 +15,23 @@ export class NavigationComponent {
 
   constructor(private dataService: DataService) {
     this.navigationItems = [];
-    // Elements section
-    let navElements: INavigationItem = {
-      title: 'Elements',
-      slug: CustomRoutes.elements,
-    };
-    // Get elements
-    dataService.getCollection('elements').then((data: any) => {
-      navElements.children = data;
-      this.navigationItems.push(navElements);
-    });
-    // Components section
-    let navComponents: INavigationItem = {
-      title: 'Components',
-      slug: CustomRoutes.components,
-    };
-    // Get components
-    dataService.getCollection('components').then((data: any) => {
-      navComponents.children = data;
-      this.navigationItems.push(navComponents);
+
+    // Get nav items
+    dataService.getNavItems().then((dataNav: any[]) => {
+      // Get elements
+      dataService.getCollection('elements').then((dataElements: any) => {
+        // Iterate navItems
+        dataNav.forEach((dataNavItem: any) => {
+          let navItem: INavigationItem = {
+            title: dataNavItem.title,
+            slug: dataNavItem.slug,
+            children: dataElements.filter(
+              (dataElement: any) => dataElement.type === dataNavItem.slug
+            ),
+          };
+          this.navigationItems.push(navItem);
+        });
+      });
     });
   }
 }

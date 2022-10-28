@@ -1,4 +1,4 @@
 export class CustomRoutes {
-  static elements: string = 'elements';
-  static components: string = 'components';
+  static elements: string = 'element';
+  static components: string = 'component';
 }
