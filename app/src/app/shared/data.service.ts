@@ -28,7 +28,7 @@ export class DataService {
   async getCollection(collectionName: string) {
     const col = collection(this.db, collectionName);
     const snapshot = await getDocs(col);
-    const list = snapshot.docs.map((doc) => doc.data());
+    const list = snapshot.docs.map((doc: any) => doc.data());
 
     return list;
   }
@@ -44,11 +44,20 @@ export class DataService {
     }
   }
 
-  async getElements() {
-    const q = query(collection(this.db, 'elements'), where('type', '==', 1));
+  async getNavItems() {
+    const q = query(collection(this.db, 'pages'), where('nav', '==', true));
     const snapshot = await getDocs(q);
-    const list = snapshot.docs.map((doc) => doc.data());
+    const list = snapshot.docs.map((doc: any) => doc.data());
 
     return list;
   }
+
+  async getElements() {
+    const q = query(collection(this.db, 'elements'), where('type', '==', 1));
+    const snapshot = await getDocs(q);
+    const list = snapshot.docs.map((doc: any) => doc.data());
+
+    return list;
+  }
+
 }
