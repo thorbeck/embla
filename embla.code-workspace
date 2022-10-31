@@ -1,10 +1,13 @@
 {
   "folders": [
     {
+      "path": "designsystem"
+    },
+    {
       "path": "app"
     },
     {
-      "path": "designsystem"
+      "path": "angular"
     }
   ],
   "settings": {
