@@ -1,0 +1,27 @@
+{
+  "name": "@abytegray/embla-core",
+  "version": "0.0.1",
+  "description": "Embla core design system.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --env development --watch",
+    "build": "webpack --env production"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^4.2.2",
+    "html-loader": "^4.2.0",
+    "mini-css-extract-plugin": "^2.7.2",
+    "postcss": "^8.4.21",
+    "postcss-loader": "^7.0.2",
+    "postcss-scss": "^4.0.6",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}

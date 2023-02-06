@@ -1,19 +1,8 @@
 {
   "folders": [
     {
-      "path": "designsystem"
-    },
-    {
-      "path": "app"
-    },
-    {
-      "path": "angular"
+      "path": "."
     }
   ],
-  "settings": {
-    "conventionalCommits.scopes": ["Core"]
-  },
-  "extensions": {
-    "recommendations": ["ethansk.restore-terminals"]
-  }
+  "settings": {}
 }
