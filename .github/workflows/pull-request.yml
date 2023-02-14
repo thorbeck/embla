@@ -20,17 +20,23 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     
-    - name: Link core
+    - name: core
       working-directory: ./core
-      run: npm link
+      run: |
+        npm ci
+        npm run build
+        npm link
       
-    - name: Link web components
+    - name: web components
       working-directory: ./web-components
-      run: npm link
+      run: |
+        npm ci
+        npm run build
+        npm link
 
-    - name: Build
+    - name: app
       working-directory: ./app
       run: |
-        npm link @abytegray/embla-core && npm link @abytegray/embla-components
         npm ci
+        npm link @abytegray/embla-core && npm link @abytegray/embla-components
         npm run build
