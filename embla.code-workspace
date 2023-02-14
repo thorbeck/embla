@@ -1,16 +1,8 @@
 {
   "folders": [
     {
-      "path": "app"
-    },
-    {
-      "path": "designsystem"
+      "path": "."
     }
   ],
-  "settings": {
-    "conventionalCommits.scopes": ["Core"]
-  },
-  "extensions": {
-    "recommendations": ["ethansk.restore-terminals"]
-  }
+  "settings": {}
 }
