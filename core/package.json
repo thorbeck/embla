@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Embla core design system.",
   "main": "index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "webpack --env development --watch",
     "build": "webpack --env production"
