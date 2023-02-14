@@ -1,0 +1,36 @@
+name: Pull Request
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    
+    - name: Link core
+      working-directory: ./core
+      run: npm link
+      
+    - name: Link web components
+      working-directory: ./web-components
+      run: npm link
+
+    - name: Build
+      working-directory: ./app
+      run: |
+        npm link @abytegray/embla-core && npm link @abytegray/embla-components
+        npm ci
+        npm run build
