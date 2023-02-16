@@ -6,7 +6,7 @@ module.exports = (env) => {
     mode: env.development ? "development" : "production",
     devtool: env.development ? "eval" : false,
     entry: {
-      main: path.resolve(__dirname, "src", "main.js"),
+      main: path.resolve(__dirname, "src", "index.js"),
     },
     output: {
       path: path.resolve(__dirname, "dist"),
