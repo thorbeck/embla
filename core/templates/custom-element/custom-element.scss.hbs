@@ -1,0 +1,11 @@
+{{#if useShadowDOM}}
+:host { 
+  display: block; 
+}
+{{else}}
+.{{lowerCase name}}
+{
+  display: block;
+}
+{{/if}}
+
