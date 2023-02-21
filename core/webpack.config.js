@@ -11,7 +11,7 @@ module.exports = (env) => {
       elements: path.resolve(__dirname, "src", "elements.js"),
     },
     output: {
-      path: path.resolve(__dirname, "dist", "core"),
+      path: path.resolve(__dirname, "dist"),
       assetModuleFilename: "assets/[name][ext]",
       clean: true,
     },

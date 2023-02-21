@@ -1,7 +1,7 @@
 import styles from "./layout.module.scss";
 import EmblaEvents from "../../events.js";
 
-class EmblaLayout extends HTMLElement {
+export class EmblaLayout extends HTMLElement {
   constructor() {
     super();
   }
@@ -17,5 +17,3 @@ class EmblaLayout extends HTMLElement {
     });
   }
 }
-
-customElements.define("embla-layout", EmblaLayout);
