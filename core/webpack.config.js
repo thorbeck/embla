@@ -7,9 +7,18 @@ module.exports = (env) => {
     mode: env.development ? "development" : "production",
     devtool: env.development ? "eval" : false,
     entry: {
-      core: path.resolve(__dirname, "src", "core.js"),
-      elements: path.resolve(__dirname, "src", "elements.js"),
+      embla: path.resolve(__dirname, "src", "index.js"),
+      polyfill: path.resolve(__dirname, "src", "polyfill.js"),
+      // Elements
+      "embla-button": path.resolve(
+        __dirname,
+        "src",
+        "elements",
+        "_button",
+        "button.js"
+      ),
     },
+
     output: {
       path: path.resolve(__dirname, "dist"),
       assetModuleFilename: "assets/[name][ext]",
