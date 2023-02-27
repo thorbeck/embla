@@ -12,9 +12,9 @@ document.body.appendChild(template);
 {{/if}}
 
 {{#if extend}}
-class {{pascalCase name}}Extended extends HTML{{pascalCase extendElement}}Element {
+class Embla{{pascalCase name}} extends HTML{{pascalCase extendElement}}Element {
 {{else}}
-class {{pascalCase name}} extends HTMLElement {
+class Embla{{pascalCase name}} extends HTMLElement {
 {{/if}}
   constructor() { 
     // Always call super first in constructor
@@ -42,7 +42,7 @@ class {{pascalCase name}} extends HTMLElement {
 }
 
 {{#if extend}}
-customElements.define('embla-{{lowerCase name}}', {{pascalCase name}}Extended, { extends: "{{lowerCase extendTag}}" });
+customElements.define('embla-{{lowerCase name}}', Embla{{pascalCase name}}, { extends: "{{lowerCase extendTag}}" });
 {{else}}
-customElements.define('embla-{{lowerCase name}}', {{pascalCase name}});
+customElements.define('embla-{{lowerCase name}}', Embla{{pascalCase name}});
 {{/if}}
