@@ -1,3 +1,6 @@
-import { EmblaLayout } from "@abytegray/embla-core";
-
-customElements.define("embla-layout", EmblaLayout);
+// Polyfill
+import "@abytegray/embla-core/dist/polyfill.js";
+// Import the whole library
+import "@abytegray/embla-core";
+// CSS
+import "@abytegray/embla-core/dist/embla.css";
