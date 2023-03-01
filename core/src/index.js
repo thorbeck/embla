@@ -4,4 +4,4 @@ import "./css/core.scss";
 import "./css/normalize.scss";
 
 // Extended elements
-export { EmblaButton } from "./elements/_button/button.js";
+export { EmblaButton } from "./elements/_button/_button.js";

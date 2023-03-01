@@ -15,7 +15,7 @@ module.exports = (env) => {
         "src",
         "elements",
         "_button",
-        "button.js"
+        "_button.js"
       ),
     },
 

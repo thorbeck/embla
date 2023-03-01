@@ -1,4 +1,4 @@
-import styles from "./button.module.scss";
+import styles from "./_button.module.scss";
 
 export class EmblaButton extends HTMLButtonElement {
   constructor() {
