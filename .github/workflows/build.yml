@@ -55,7 +55,7 @@ jobs:
       working-directory: ./app
       run: |
         npm ci
-        npm link @abytegray/embla-core && npm link @abytegray/embla-components
+        npm link @abytegray/embla-core @abytegray/embla-components
         npm run build
       
     - name: Upload artifact
