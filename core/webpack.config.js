@@ -1,23 +1,27 @@
+const glob = require("glob");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
+function getEntries(pattern) {
+  const entries = {
+    embla: path.resolve(__dirname, "src", "index.js"),
+    polyfill: path.resolve(__dirname, "src", "polyfill.js"),
+  };
+  glob.sync(pattern).forEach((file) => {
+    const outputFileKey =
+      "embla-" + path.basename(file).replace("_", "").replace(".js", "");
+    entries[outputFileKey] = path.join(__dirname, file);
+  });
+
+  return entries;
+}
 
 module.exports = (env) => {
   return {
     mode: env.development ? "development" : "production",
     devtool: env.development ? "eval" : false,
-    entry: {
-      embla: path.resolve(__dirname, "src", "index.js"),
-      polyfill: path.resolve(__dirname, "src", "polyfill.js"),
-      // Elements
-      "embla-button": path.resolve(
-        __dirname,
-        "src",
-        "elements",
-        "_button",
-        "_button.js"
-      ),
-    },
+    entry: getEntries("src/elements/**/*.js"),
 
     output: {
       path: path.resolve(__dirname, "dist"),
