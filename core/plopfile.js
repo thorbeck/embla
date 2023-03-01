@@ -54,11 +54,11 @@ module.exports = (plop) => {
     ],
     actions: (data) => {
       var actions = [];
-      const filename = data.extend ? "_" : "";
+      const prefix = data.extend ? "_" : "";
       // Custom element
       actions.push({
         type: "add",
-        path: `src/elements/${filename}{{lowerCase name}}/{{lowerCase name}}.js`,
+        path: `src/elements/${prefix}{{lowerCase name}}/${prefix}{{lowerCase name}}.js`,
         templateFile: "templates/custom-element/custom-element.js.hbs",
       });
       // SCSS & HTML
@@ -76,7 +76,7 @@ module.exports = (plop) => {
       } else {
         actions.push({
           type: "add",
-          path: `src/elements/${filename}{{lowerCase name}}/{{lowerCase name}}.module.scss`,
+          path: `src/elements/${prefix}{{lowerCase name}}/${prefix}{{lowerCase name}}.module.scss`,
           templateFile: "templates/custom-element/custom-element.scss.hbs",
         });
       }
