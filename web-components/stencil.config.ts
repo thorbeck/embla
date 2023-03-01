@@ -1,7 +1,7 @@
-import { Config } from '@stencil/core';
-import { sass } from '@stencil/sass';
-import { postcss } from '@stencil/postcss';
-import autoprefixer from 'autoprefixer';
+import { Config } from "@stencil/core";
+import { sass } from "@stencil/sass";
+import { postcss } from "@stencil/postcss";
+import autoprefixer from "autoprefixer";
 
 export const config: Config = {
   plugins: [
@@ -10,12 +10,12 @@ export const config: Config = {
       plugins: [autoprefixer()],
     }),
   ],
-  namespace: 'embla',
+  namespace: "embla",
   outputTargets: [
     {
-      type: 'dist',
-      dir: './dist',
-      esmLoaderPath: 'loader',
+      type: "dist",
+      dir: "./dist",
+      esmLoaderPath: "loader",
     },
   ],
 };

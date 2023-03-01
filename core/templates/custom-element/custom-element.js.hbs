@@ -1,0 +1,48 @@
+{{#if useShadowDOM}}
+import styles from './{{lowerCase name}}.shadow.scss'; 
+import markup from './{{lowerCase name}}.html';
+{{else}}
+import styles from './{{lowerCase name}}.module.scss';
+{{/if}}
+{{#if useShadowDOM}}
+const template = document.createElement('template');
+template.id = 'embla-{{lowerCase name}}';
+template.innerHTML = `<style>${styles}</style>${markup}`;
+document.body.appendChild(template);
+{{/if}}
+
+{{#if extend}}
+class Embla{{pascalCase name}} extends HTML{{pascalCase extendElement}}Element {
+{{else}}
+class Embla{{pascalCase name}} extends HTMLElement {
+{{/if}}
+  constructor() { 
+    // Always call super first in constructor
+    super();
+{{#if useShadowDOM}}
+    // Get template by id
+    const template = document.getElementById('abg-{{lowerCase name}}');
+    // Set template content
+    const templateContent = template.content;
+    // Add shadowroot and add template content
+    this.attachShadow({ mode: 'open'})
+      .appendChild( templateContent.cloneNode(true) );
+{{/if}}
+  }
+  
+  // When element is added to DOM
+  connectedCallback() {
+{{#if useShadowDOM}}
+    const heading = this.shadowRoot.querySelector('span');
+    heading.innerText = `embla-{{lowerCase name}} works!`;
+{{else}}
+    this.classList.add(styles.{{lowerCase name}});
+{{/if}}
+  } 
+}
+
+{{#if extend}}
+customElements.define('embla-{{lowerCase name}}', Embla{{pascalCase name}}, { extends: "{{lowerCase extendTag}}" });
+{{else}}
+customElements.define('embla-{{lowerCase name}}', Embla{{pascalCase name}});
+{{/if}}
